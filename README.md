@@ -6,7 +6,7 @@ Image picker  & image cropper and cupertinosheet
 ## Screenshots
 
 |:------------:|:------------:|:-------------:|
-![ss1](https://user-images.githubusercontent.com/37551474/114921008-bfe5e480-9e32-11eb-9302-cc85dac926ae.png)
+<img src="https://user-images.githubusercontent.com/37551474/114921008-bfe5e480-9e32-11eb-9302-cc85dac926ae.png" height="300em" /> <img src="ss2.png" height="300em" />
 
 ## dependencies:
 
