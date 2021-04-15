@@ -38,10 +38,14 @@ class _HomeScreenState extends State<HomeScreen> {
             title: 'Flutter Select Photo',
             itemCount: 4,
             height: 120.0,
+            backgroundColor: Colors.white,
+            backgroundImage: Colors.orange,
+            iconColor: Colors.white,
+            iconEditColor: Colors.red,
+            iconAddColor: Colors.white,
             selectionPhoto: (file) {
               imagesFile = file;
             },
-            backgroundColor: Colors.black,
           ),
           SizedBox(height: 20.0),
           SizedBox(
