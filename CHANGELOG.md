@@ -9,3 +9,5 @@
 * Edit photos (screen shots)
 ## 0.1.3
 * Edit ReadMe.md
+## 0.1.4 
+* Edit import path
