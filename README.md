@@ -4,10 +4,10 @@ Image picker  & image cropper and cupertinosheet
 
 
 ## Screenshots
-<img src="ss1.png" height="300" /> <img src="ss2.png" height="300" /> <img src="ss3.png" height="300" /><img src="ss4.png" height="300" /><img src="ss5.png" height="300" /> 
 
+|:------------:|:------------:|:-------------:|
+|	[![](https://github.com/taylanyildiz/select_profile_photo/tree/main/repo_files/images/ss1.png)] [![]
 ## dependencies:
-
 
 ```yaml
   dependencies:
