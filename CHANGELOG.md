@@ -5,3 +5,7 @@
 * Selection Photo update
 ## 0.1.0
 * Edit Example 
+## 0.1.2
+* Edit photos (screen shots)
+## 0.1.3
+* Edit ReadMe.md

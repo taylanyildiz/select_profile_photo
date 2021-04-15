@@ -1,6 +1,6 @@
 name: select_profile_photo
 description: Select photos for your app by using image picker and image cropper
-version: 0.1.0
+version: 0.1.3
 homepage: https://github.com/taylanyildiz/select_proifle_photo.git
 
 

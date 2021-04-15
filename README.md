@@ -7,13 +7,22 @@ Image picker  & image cropper and cupertinosheet
 
 <img src="https://user-images.githubusercontent.com/37551474/114921008-bfe5e480-9e32-11eb-9302-cc85dac926ae.png" height="300em" /> <img src="https://user-images.githubusercontent.com/37551474/114921447-3be02c80-9e33-11eb-8a48-e7d50cd5647d.png" height="300em" /> <img src="https://user-images.githubusercontent.com/37551474/114921519-50bcc000-9e33-11eb-9b3e-f18b3644df3d.png" height="300em" /> <img src="https://user-images.githubusercontent.com/37551474/114921635-734ed900-9e33-11eb-93d5-ea739df05293.png" height="300em" />
 
+
+## Usage
+
+[Example](https://github.com/taylanyildiz/select_profile_photo/blob/main/example/example.dart)
+
+To use this package :
+
+* add the dependency to your [pubspec.yaml](https://github.com/taylanyildiz/select_profile_photo/blob/main/pubspec.yaml) file.
+
 ## dependencies:
 
 ```yaml
   dependencies:
     flutter:
       sdk: flutter
-    select_profile_photo:
+    select_profile_photo: 
 ```
 
 ## How to use
