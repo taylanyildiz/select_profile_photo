@@ -1,5 +1,3 @@
-library select_profile_photo;
-
 import 'dart:io';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -14,6 +12,8 @@ class ImagePicker extends StatefulWidget {
   Color backgroundImage;
   Color buttonColor;
   Color iconColor;
+  Color iconAddColor;
+  Color iconEditColor;
   double height;
   double width;
   final int itemCount;
@@ -30,6 +30,8 @@ class ImagePicker extends StatefulWidget {
     Color backgroundColor,
     Color buttonColor,
     Color iconColor,
+    Color iconAddColor,
+    Color iconEditColor,
     double height,
     double width,
     this.itemCount,
@@ -39,6 +41,8 @@ class ImagePicker extends StatefulWidget {
         backgroundImage = backgroundImage ?? Colors.white,
         buttonColor = buttonColor ?? Colors.blue,
         iconColor = iconColor ?? Colors.white,
+        iconAddColor = iconAddColor ?? Colors.white,
+        iconEditColor = iconEditColor ?? Colors.red,
         iconAdd = iconAdd ?? Icons.add,
         iconEdit = iconEdit ?? Icons.edit,
         height = height ?? 200.0,
@@ -93,7 +97,6 @@ class _ImagePickerState extends State<ImagePicker> {
   Future<List<Widget>> dispLayWidget() async {
     final displaylist = <Widget>[];
     Widget child;
-    Widget icon;
     bool checkImage = false;
     for (var index = 1; index <= widget.itemCount; index++) {
       if (imageFiles.length >= index) {
@@ -109,7 +112,7 @@ class _ImagePickerState extends State<ImagePicker> {
         checkImage = false;
         child = Icon(
           Icons.image,
-          color: Colors.red,
+          color: widget.iconColor,
           size: 35.0,
         );
       }
@@ -179,7 +182,8 @@ class _ImagePickerState extends State<ImagePicker> {
                   ),
                   child: Icon(
                     checkImage ? widget.iconEdit : widget.iconAdd,
-                    color: widget.iconColor,
+                    color:
+                        checkImage ? widget.iconEditColor : widget.iconAddColor,
                     size: 20.0,
                   ),
                 ),

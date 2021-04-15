@@ -22,6 +22,8 @@ To use this package :
   dependencies:
     flutter:
       sdk: flutter
+    image_picker: ^^^
+    image_cropper: ^^^
     select_profile_photo: 
 ```
 
@@ -43,10 +45,14 @@ import 'package:select_profile_photo/select_profile_photo.dart';
     title: 'Flutter Select Photo',
     itemCount: 4,
     height: 120.0,
+    backgroundColor: Colors.white,
+    backgroundImage: Colors.orange,
+    iconColor: Colors.white,
+    iconEditColor: Colors.red,
+    iconAddColor: Colors.white,
     selectionPhoto: (file) {
-      print(file.length);
+      imagesFile = file;
     },
-    backgroundColor: Colors.black,
   ),
 ```
 
@@ -124,6 +130,8 @@ class ImagePicker extends StatefulWidget {
   Color backgroundImage;
   Color buttonColor;
   Color iconColor;
+  Color iconAddColor;
+  Color iconEditColor;
   double height;
   double width;
   final int itemCount;
@@ -140,6 +148,8 @@ class ImagePicker extends StatefulWidget {
     Color backgroundColor,
     Color buttonColor,
     Color iconColor,
+    Color iconAddColor,
+    Color iconEditColor,
     double height,
     double width,
     this.itemCount,
@@ -149,6 +159,8 @@ class ImagePicker extends StatefulWidget {
         backgroundImage = backgroundImage ?? Colors.white,
         buttonColor = buttonColor ?? Colors.blue,
         iconColor = iconColor ?? Colors.white,
+        iconAddColor = iconAddColor ?? Colors.white,
+        iconEditColor = iconEditColor ?? Colors.red,
         iconAdd = iconAdd ?? Icons.add,
         iconEdit = iconEdit ?? Icons.edit,
         height = height ?? 200.0,
