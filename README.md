@@ -30,7 +30,7 @@ To use this package :
 ## import
 
 ```dart
-  import 'package:image_picker_crop/pfoile_screen.dart';
+import 'package:select_profile_photo/select_profile_photo.dart';
 ```
 
 
