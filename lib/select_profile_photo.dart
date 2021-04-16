@@ -6,6 +6,10 @@ import 'package:select_profile_photo/utils_image.dart';
 
 class ImagePicker extends StatefulWidget {
   final String title;
+  String selectTitle;
+  String takeTitle;
+  String deleteTitle;
+  IconData iconImage;
   IconData iconAdd;
   IconData iconEdit;
   Color backgroundColor;
@@ -16,6 +20,7 @@ class ImagePicker extends StatefulWidget {
   Color iconEditColor;
   double height;
   double width;
+  bool showTitle;
   final int itemCount;
   final Function(List<File>) selectionPhoto;
   AndroidUiSettings androidUiSettingsLock;
@@ -24,6 +29,11 @@ class ImagePicker extends StatefulWidget {
     Key key,
     @required this.selectionPhoto,
     this.title,
+    this.takeTitle = 'Take a Photo',
+    this.selectTitle = 'Select a Photo',
+    this.deleteTitle = 'Delete Photo',
+    this.showTitle = true,
+    IconData iconImage,
     IconData iconAdd,
     IconData iconEdit,
     Color backgroundImage,
@@ -43,6 +53,7 @@ class ImagePicker extends StatefulWidget {
         iconColor = iconColor ?? Colors.white,
         iconAddColor = iconAddColor ?? Colors.white,
         iconEditColor = iconEditColor ?? Colors.red,
+        iconImage = iconImage ?? Icons.image,
         iconAdd = iconAdd ?? Icons.add,
         iconEdit = iconEdit ?? Icons.edit,
         height = height ?? 200.0,
@@ -111,7 +122,7 @@ class _ImagePickerState extends State<ImagePicker> {
       } else {
         checkImage = false;
         child = Icon(
-          Icons.image,
+          widget.iconImage,
           color: widget.iconColor,
           size: 35.0,
         );
@@ -140,7 +151,7 @@ class _ImagePickerState extends State<ImagePicker> {
                       actions: [
                         CupertinoActionSheetAction(
                           isDefaultAction: true,
-                          child: const Text('Select Photo'),
+                          child: Text(widget.selectTitle),
                           onPressed: () {
                             isGallery = true;
 
@@ -150,7 +161,7 @@ class _ImagePickerState extends State<ImagePicker> {
                         ),
                         CupertinoActionSheetAction(
                           isDestructiveAction: true,
-                          child: const Text('Take Photo'),
+                          child: Text(widget.takeTitle),
                           onPressed: () {
                             isGallery = false;
                             Navigator.pop(context);
@@ -159,7 +170,7 @@ class _ImagePickerState extends State<ImagePicker> {
                         ),
                         CupertinoActionSheetAction(
                           isDefaultAction: false,
-                          child: const Text('Delete Photo'),
+                          child: Text(widget.deleteTitle),
                           onPressed: () {
                             Navigator.pop(context);
                             if (imageFiles.length >= index) {
@@ -205,19 +216,21 @@ class _ImagePickerState extends State<ImagePicker> {
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Container(
-            margin: EdgeInsets.only(bottom: 40.0, left: 20.0),
-            child: widget.title != null
-                ? Text(
-                    widget.title,
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 20.0,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  )
-                : SizedBox.shrink(),
-          ),
+          widget.showTitle != false
+              ? Container(
+                  margin: EdgeInsets.all(20.0),
+                  child: widget.title != null
+                      ? Text(
+                          widget.title,
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 20.0,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        )
+                      : SizedBox.shrink(),
+                )
+              : SizedBox.shrink(),
           FutureBuilder<List<Widget>>(
             future: dispLayWidget(),
             builder: (context, constraint) {

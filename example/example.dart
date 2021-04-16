@@ -58,11 +58,13 @@ class _HomeScreenState extends State<HomeScreen> {
                 style: TextStyle(color: Colors.white, fontSize: 17.0),
               ),
               onPressed: () => Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => PofileScreen(
-                            imageFile: imagesFile,
-                          ))),
+                context,
+                MaterialPageRoute(
+                  builder: (context) => PofileScreen(
+                    imageFile: imagesFile,
+                  ),
+                ),
+              ),
             ),
           ),
         ],

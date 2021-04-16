@@ -15,3 +15,5 @@
 * Update library
 ## 0.1.6
 * Update example
+## 0.1.7
+* Update library,added cupertino sheet button title,image icon change
